@@ -1,0 +1,11 @@
+[Unit]
+Description=GitHub self-hosted runner service
+
+[Service]
+ExecStart=/home/ubuntu/actions-runner/run.sh
+StandardOutput=file:/home/ubuntu/runner_stdout.log
+StandardError=file:/home/ubuntu/runner_stderr.log
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
