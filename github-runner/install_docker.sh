@@ -17,9 +17,12 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
+# Install Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# Set permissions
 sudo usermod -aG docker ${USER}
 sudo chmod 666 /var/run/docker.sock
 
-# sudo docker run hello-world
+# Run test
+docker run hello-world
